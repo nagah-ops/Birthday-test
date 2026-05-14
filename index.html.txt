@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلاد سعيد! ✨</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f0faff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative; width: 85%; max-width: 450px; border: 3px solid #00b4d8; }
+        h1 { color: #0077b6; font-size: 22px; }
+        .buttons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; height: 50px; }
+        button { padding: 10px 25px; border: none; border-radius: 12px; cursor: pointer; font-size: 18px; transition: 0.2s; font-weight: bold; }
+        #yesBtn { background-color: #00b4d8; color: white; }
+        #noBtn { background-color: #94d2bd; color: #333; position: absolute; }
+        .celebration { display: none; }
+        .birthday-img { width: 100%; border-radius: 15px; margin-top: 15px; border: 2px dashed #00b4d8; }
+        .confetti { font-size: 40px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainBox">
+        <div id="questionArea">
+            <h1 id="questionText">هل أنت مستعد لأجمل مفاجأة عيد ميلاد في العالم؟ 🎂</h1>
+            <div class="buttons">
+                <button id="yesBtn" onclick="celebrate()">نعم، طبعاً!</button>
+                <button id="noBtn" onmouseover="moveButton()">لا، لسه</button>
+            </div>
+        </div>
+
+        <div id="celebrationArea" class="celebration">
+            <h1>كل عام وأنت بألف خير! ❤️✨</h1>
+            <p>أتمنى لك سنة تشبه جمال قلبك ودعمك لي</p>
+            <!-- ضعي رابط صورة ذكرى بينكما هنا -->
+            <img src="رابط_صورتكم_هنا" class="birthday-img" alt="عيد ميلاد سعيد">
+            <div class="confetti">🎈🎁🎊🎂✨</div>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            // حركة أسرع وأكثر عشوائية للزر "لا"
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight - 50);
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.getElementById('questionArea').style.display = 'none';
+            document.getElementById('celebrationArea').style.display = 'block';
+            document.body.style.backgroundColor = '#caf0f8';
+        }
+    </script>
+</body>
+</html>
